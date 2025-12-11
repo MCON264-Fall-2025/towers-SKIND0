@@ -51,6 +51,12 @@ public class TowersExercise21 {
      * @param to   destination peg
      */
     public static void solve(int n, char from, char aux, char to) {
+        if (n == 0)
+            return;
+
+        solve(n-1, from, to, aux);
+        count++;
+        solve(n-1, aux, from, to);
         // TODO 1: Base case — if n == 0 → return.
 
         // TODO 2: Recursive case —

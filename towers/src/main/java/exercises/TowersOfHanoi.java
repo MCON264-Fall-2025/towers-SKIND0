@@ -36,6 +36,15 @@ public class TowersOfHanoi {
      * @param moves output list to record each move as a string "X -> Y"
      */
     public static void solve(int n, char from, char aux, char to, List<String> moves) {
+        if (n == 0)
+            return;
+
+        solve(n - 1, from, to, aux, moves);
+
+        System.out.println("Move disk from " + from + " to " + to);
+        moves.add(from + " -> " + to);
+
+        solve(n - 1, aux, from, to, moves);
         // TODO: implement recursively
         // if (n == 0) return;
         // 1) solve(n - 1, from, to, aux, moves);
